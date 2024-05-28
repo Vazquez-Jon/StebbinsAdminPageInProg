@@ -22,3 +22,13 @@ px create-react-app [app name]
 ```
 npm i -D react-router-dom
 ```
+
+# Run Project in Local port
+## Move into project directory
+```
+cd [app name]
+```
+## Run npm start
+```
+npm start
+```
