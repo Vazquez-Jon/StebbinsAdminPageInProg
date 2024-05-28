@@ -5,6 +5,14 @@ Stebbins admin repository for practice to not fill main project with garbage
 
 ## Node Package Manager
 
+## Create React App
+```
+px create-react-app [app name]
+```
+## Move into project directory
+```
+cd [app name]
+```
 ## Firebase CLI
 ```
 npm install -g firebase-tools
@@ -14,20 +22,12 @@ npm install -g firebase-tools
 ```
 firebase login
 ```
-## Create React App
-```
-px create-react-app [app name]
-```
 ## Install React Router DOM
 ```
 npm i -D react-router-dom
 ```
 
 # Run Project in Local port
-## Move into project directory
-```
-cd [app name]
-```
 ## Run npm start
 ```
 npm start
