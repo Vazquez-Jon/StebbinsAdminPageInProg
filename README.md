@@ -14,3 +14,11 @@ npm install -g firebase-tools
 ```
 firebase login
 ```
+## Create React App
+```
+px create-react-app [app name]
+```
+## Install React Router DOM
+```
+npm i -D react-router-dom
+```
