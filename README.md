@@ -61,4 +61,12 @@ firebase emulators:start
 firebase deploy --only hosting
 ```
 
+# Firebase Security Rules
+## Prevent sign up
+Can be prevented by going to auth/settings/user actions and unchecking Enable Create
+## Prevent database read/write from unauthenticated users
+Can be accomplished by going to firestore/rules and adding
+```
+allow read, write: if request.auth != null;
+```
 
