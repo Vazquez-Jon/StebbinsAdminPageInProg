@@ -56,5 +56,9 @@ npm run build
 ```
 firebase emulators:start
 ```
+## Deploy Project
+```
+firebase deploy --only hosting
+```
 
 
