@@ -39,7 +39,7 @@ npm start
 ```
 firebase init hosting
 ```
-## Select the proper options
+### Select the proper options
 <ol>
   <li>Yes to use current directy as project directory</li>
   <li>Choose Use an Existiing project</li>
@@ -47,5 +47,14 @@ firebase init hosting
   <li>Yes to set up as single page site (React SPA)</li>
   <li>No to set up with github</li>
 </ol>
+
+## Run build cmd for react
+```
+npm run build
+```
+## To see what site will look like before deploying
+```
+firebase emulators:start
+```
 
 
