@@ -60,6 +60,11 @@ firebase emulators:start
 ```
 firebase deploy --only hosting
 ```
+## To unhost the website run 
+```
+firebase hosting:disable
+```
+And then 
 
 # Firebase Security Rules
 ## Prevent sign up
@@ -69,4 +74,3 @@ Can be accomplished by going to firestore/rules and adding
 ```
 allow read, write: if request.auth != null;
 ```
-
