@@ -32,3 +32,41 @@ npm i -D react-router-dom
 ```
 npm start
 ```
+
+# Deploying to firebase hosting
+## Make sure you are in project directory
+## Initialize firebase hosting wizard
+```
+firebase init hosting
+```
+### Select the proper options
+<ol>
+  <li>Yes to use current directy as project directory</li>
+  <li>Choose Use an Existiing project</li>
+  <li>Choose name of public directory to create</li>
+  <li>Yes to set up as single page site (React SPA)</li>
+  <li>No to set up with github</li>
+</ol>
+
+## Run build cmd for react
+```
+npm run build
+```
+## To see what site will look like before deploying
+```
+firebase emulators:start
+```
+## Deploy Project
+```
+firebase deploy --only hosting
+```
+
+# Firebase Security Rules
+## Prevent sign up
+Can be prevented by going to auth/settings/user actions and unchecking Enable Create
+## Prevent database read/write from unauthenticated users
+Can be accomplished by going to firestore/rules and adding
+```
+allow read, write: if request.auth != null;
+```
+
