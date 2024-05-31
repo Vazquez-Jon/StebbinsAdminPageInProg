@@ -3,7 +3,9 @@ import { signOut } from "firebase/auth";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from '../firebase';
 import { useNavigate } from 'react-router-dom';
-import UpdateStatusField from '../UpdateStatusField';
+import UpdateStatusField from './UpdateStatusField';
+
+import '../pageCSS/Home.css'
  
 const Home = () => {
     useEffect(()=>{
@@ -36,19 +38,21 @@ const Home = () => {
     }
    
     return(
-        <>
+        <div className='mainContainer'>
             <nav>
-                <p>
-                    Welcome Home
-                </p>
+                <img src={ require('../assets/bat_horizontalSCCRLarger.png') }
+                    className='logoImg'
+                />
                 {<UpdateStatusField/>}
                 <div>
-        			<button onClick={handleLogout}>
+        			<button onClick={handleLogout}
+                        className='buttonLogout'
+                    >
                         Logout
                     </button>
         		</div>
             </nav>
-        </>
+        </div>
     )
 }
  
