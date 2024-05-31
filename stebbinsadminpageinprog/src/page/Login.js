@@ -2,11 +2,15 @@ import React, {useState} from 'react';
 import {  signInWithEmailAndPassword   } from 'firebase/auth';
 import { auth } from '../firebase';
 import { useNavigate } from 'react-router-dom'
+
+import  '../pageCSS/Login.css'
  
 const Login = () => {
     const navigate = useNavigate();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+
+    const [signInFail, setSignInFail] = useState(false);
        
     const onLogin = (e) => {
         e.preventDefault();
@@ -20,22 +24,26 @@ const Login = () => {
         .catch((error) => {
             const errorCode = error.code;
             const errorMessage = error.message;
-            console.log(errorCode, errorMessage)
+            console.log(errorCode, errorMessage);
+            setSignInFail(true);
         });
        
     }
  
     return(
-        <>
-            <main >        
-                <section>
-                    <div>                                            
-                        <p> Stebbins Admin </p>                       
-                                                       
+        <div className='mainContainer'>
+            <main>
+                <img src={ require('../assets/bat_horizontalSCCRLarger.png') }
+                    className='logoImg'
+                />    
+                <section className='sectionContainer'>
+                    <div>                                                                         
                         <form>                                              
-                            <div>
-                                <label htmlFor="email-address">
-                                    Email address
+                            <div className='inputContainer'>
+                                <label htmlFor="email-address" 
+                                className='labels'
+                                >
+                                    Email address: 
                                 </label>
                                 <input
                                     id="email-address"
@@ -44,12 +52,14 @@ const Login = () => {
                                     required                                                                                
                                     placeholder="Email address"
                                     onChange={(e)=>setEmail(e.target.value)}
+                                    className='anInput'
                                 />
                             </div>
-
-                            <div>
-                                <label htmlFor="password">
-                                    Password
+                            <div className='inputContainer'>
+                                <label htmlFor="password"
+                                    className='labels'
+                                >
+                                    Password:
                                 </label>
                                 <input
                                     id="password"
@@ -58,12 +68,16 @@ const Login = () => {
                                     required                                                                                
                                     placeholder="Password"
                                     onChange={(e)=>setPassword(e.target.value)}
+                                    className='anInput'
                                 />
                             </div>
-                                                
-                            <div>
+                            <div className='signInFailContainer'>
+                                {signInFail && <p className='signInFailP'>Username or password was incorrect</p>}
+                            </div>             
+                            <div className='buttonContainer'>
                                 <button                                    
-                                    onClick={onLogin}                                        
+                                    onClick={onLogin}
+                                    className='button9'                                        
                                 >      
                                     Login                                                                  
                                 </button>
@@ -72,7 +86,7 @@ const Login = () => {
                     </div>
                 </section>
             </main>
-        </>
+        </div>
     )
 }
  
